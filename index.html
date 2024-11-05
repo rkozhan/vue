@@ -16,15 +16,19 @@
         <div class="card center">
            <h1 v-text="title + ': ' + items.length"></h1>
 
-           <ul class="list">
-            <li
-                class="list-item"
-                v-for="(value, i) in items"
-                @click="items.splice(i, 1)"
-            >
-                {{ value }}
-            </li>
+           <ul class="list" v-if="items.length">
+                <li
+                    class="list-item"
+                    v-for="(value, i) in items"
+                    @click="items.splice(i, 1)"
+                >
+                    {{ value }}
+                </li>
            </ul>
+
+           <!-- <h3 v-else>No items</h3> -->
+           <!-- diretive v-show, if false => display:none -->
+           <h3 v-show="!items.length">No items</h3>
         </div>
     </div>
 
