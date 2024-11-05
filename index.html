@@ -11,13 +11,15 @@
         <div class="card center">
             <h1>{{ title }}</h1>
             <div class="form-control">
-                <!-- directive to bind attributes -->
+                <!-- directive to bind event handler -->
                 <input
-                    type="text"
+                type="text"
                     v-bind:placeholder="myPlaceholder"
                     v-bind:value="inputValue"
+                    v-on:input="inputChange1Handler"
                 >
             </div>
+            <h2>inputValue: {{ inputValue }}</h2>
             <button class="btn primary">Add</button>
             <hr>
         </div>
