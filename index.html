@@ -17,7 +17,9 @@
            <h1 v-text="title"></h1>
 
            <ul class="list">
-            <li class="list-item" v-for="item in 5">{{ item }}</li>
+            <li class="list-item" v-for="(value, key) in person">
+                {{key}}: {{ value }}
+            </li>
            </ul>
         </div>
     </div>
