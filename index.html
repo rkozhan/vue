@@ -9,7 +9,11 @@
 <body>
     <div class="container" id="app">
         <div class="card center">
-            <h1>{{ title }}: {{ calcAllNotesComputed }}</h1>
+            <!-- <h1 style="color:darkred">{{ title }}: {{ calcAllNotesComputed }}</h1> -->
+            <h1 :style="{
+                color: inputValue.length < 5 ? 'darkred' : 'darkblue',
+                fontSize: inputValue.length ? inputValue.length + 'rem' : '1rem'
+            }">{{ title }}: {{ calcAllNotesComputed }}</h1>
             <div class="form-control">
                 <input
                 type="text"
@@ -17,13 +21,6 @@
                     v-model="inputValue"
                     @keypress.enter="addNewNote"
                 >
-                <!-- <input
-                type="text"
-                    :placeholder="myPlaceholder"
-                    :value="inputValue"
-                    @input="inputChangeHandler"
-                    @keypress.enter="addNewNote"
-                > -->
             </div>
             <button class="btn primary" v-on:click="addNewNote">Add</button>
             <hr>
