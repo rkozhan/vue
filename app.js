@@ -12,14 +12,15 @@ const App = {
             this.inputValue = event.target.value            
         },
         addNewNote() {
-            this.notes.push(this.inputValue)
-            this.inputValue = ''
+            if (this.inputValue) {
+                this.notes.push(this.inputValue)
+                this.inputValue = ''
+            }
         },
-        //if event as param with another params,
-        //in html it should be named $event (+ order of params)
-        removeNote(i, e) { 
-            //console.log(i);
-            //console.log(e); 
+        toUpperCase(str) {
+            return str.toUpperCase()
+        },
+        removeNote(i) {
             this.notes.splice(i, 1)
         }
     }
