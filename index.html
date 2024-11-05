@@ -14,10 +14,16 @@
                 <input
                 type="text"
                     :placeholder="myPlaceholder"
+                    v-model="inputValue"
+                    @keypress.enter="addNewNote"
+                >
+                <!-- <input
+                type="text"
+                    :placeholder="myPlaceholder"
                     :value="inputValue"
                     @input="inputChangeHandler"
                     @keypress.enter="addNewNote"
-                >
+                > -->
             </div>
             <button class="btn primary" v-on:click="addNewNote">Add</button>
             <hr>

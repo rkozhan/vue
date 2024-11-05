@@ -8,9 +8,10 @@ const App = {
         }
     }, 
     methods: {
+        /*
         inputChangeHandler(event) {
             this.inputValue = event.target.value            
-        },
+        },*/
         addNewNote() {
             if (this.inputValue) {
                 this.notes.push(this.inputValue)
@@ -31,7 +32,6 @@ const App = {
         }
     },
     watch: { 
-        //watch var changing: someVarName -> in watch someVarName(var)
         inputValue(value) { 
             if (value.length > 10) this.inputValue = ''  //some validation
             console.log('input value changed', value);
