@@ -11,11 +11,12 @@
         <div class="card center">
             <h1>{{ title }}: {{notes.length}}</h1>
             <div class="form-control">
+                <!-- Labels:  v-bind: => : // v-on:  => @ -->
                 <input
                 type="text"
-                    v-bind:placeholder="myPlaceholder"
+                    :placeholder="myPlaceholder"
                     v-bind:value="inputValue"
-                    v-on:input="inputChange1Handler"
+                    @input="inputChange1Handler"
                     v-on:keypress.enter="addNewNote"
                 >
             </div>
@@ -23,7 +24,6 @@
             <hr>
             <ul class="list" v-if="notes.length">
                 <li class="list-item" v-for="(note, i) in notes"> 
-                                  <!-- Methods in the template -->
                     <div>{{ toUpperCase(note) }}</div>
                     <button class="btn danger" v-on:click="removeNote(i)">Delete</button>
                 </li>
