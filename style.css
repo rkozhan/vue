@@ -79,3 +79,7 @@ input {
 .bold {
     font-weight: bold;
 }
+
+.pt4 {
+    padding-top: 4px;
+}
