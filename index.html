@@ -9,10 +9,12 @@
 <body>
     <div class="container" id="app">
         <div class="card center">
-            <h1>Counter: {{counter}}</h1>
+            <!-- interpolation: any value that can be => to string -->
+            <h1>{{ title }}: {{ counter }}</h1>
             <div class="btn-wrapper">
-                <div class="btn primary">+</div>
-                <div class="btn danger">-</div>
+                <!-- directives -->
+                <div class="btn primary" v-on:click="counter++">+</div>
+                <div class="btn danger" v-on:click="counter--">-</div>
             </div>
         </div>
     </div>
