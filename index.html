@@ -9,11 +9,9 @@
 <body>
     <div class="container" id="app">
         <div class="card center">
-            <!-- <h1 style="color:darkred">{{ title }}: {{ calcAllNotesComputed }}</h1> -->
-            <h1 :style="{
-                color: inputValue.length < 5 ? 'darkred' : 'darkblue',
-                fontSize: inputValue.length ? inputValue.length + 'rem' : '1rem'
-            }">{{ title }}: {{ calcAllNotesComputed }}</h1>
+            <h1 :style="{color: inputValue.length < 5 ? 'darkred' : 'darkblue',}">
+                {{ title }}: {{ calcAllNotesComputed }}
+            </h1>
             <div class="form-control">
                 <input
                 type="text"
@@ -26,7 +24,25 @@
             <hr>
             <ul class="list" v-if="notes.length">
                 <li class="list-item" v-for="(note, i) in notes"> 
-                    <div>{{ toUpperCase(note) }}</div>
+                    <!-- var 1 -->
+                    <!-- <div
+                    :class="note.length > 5 ? 'italic bold' : 'italic'"
+                    >
+                    {{ toUpperCase(note) }}
+                </div> -->
+
+                    <!-- var 2 -->
+                    <!-- <div :class="{
+                        'italic': true,
+                        'bold': note.length > 5
+                    }">
+                        {{ toUpperCase(note) }}
+                    </div> -->
+
+                    <!-- var 3 -->
+                    <div :class="['italic', {'bold': note.length > 5}]">
+                        {{ toUpperCase(note) }}
+                    </div>
                     <button class="btn danger" v-on:click="removeNote(i)">Delete</button>
                 </li>
             </ul>            
