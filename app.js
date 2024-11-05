@@ -14,6 +14,13 @@ const App = {
         addNewNote() {
             this.notes.push(this.inputValue)
             this.inputValue = ''
+        },
+        //if event as param with another params,
+        //in html it should be named $event (+ order of params)
+        removeNote(i, e) { 
+            //console.log(i);
+            //console.log(e); 
+            this.notes.splice(i, 1)
         }
     }
 }

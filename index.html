@@ -9,7 +9,7 @@
 <body>
     <div class="container" id="app">
         <div class="card center">
-            <h1>{{ title }}</h1>
+            <h1>{{ title }}: {{notes.length}}</h1>
             <div class="form-control">
                 <input
                 type="text"
@@ -22,8 +22,9 @@
             <button class="btn primary" v-on:click="addNewNote">Add</button>
             <hr>
             <ul class="list">
-                <li class="list-item" v-for="note in notes">               
-                    {{ note }}
+                <li class="list-item" v-for="(note, i) in notes">               
+                    <div>{{ note }}</div>
+                    <button class="btn danger" v-on:click="removeNote(i, $event)">Delete</button>
                 </li>
             </ul>
         </div>

@@ -36,7 +36,7 @@ body {
     color: whitesmoke;
     border: none;
     border-radius: 1.5rem;
-    padding-inline: 2rem;
+    padding-inline: 1rem;
     cursor: pointer;
 }
 
@@ -45,11 +45,15 @@ body {
 }
 
 .danger {
-    background: firebrick;
+    background: tomato;
 }
 
 .form-control {
     margin-bottom: 1rem;
+}
+
+input {
+    width: 100%;
 }
 
 .list {
@@ -64,4 +68,6 @@ body {
     padding: 1rem;
     background: wheat;
     border-radius: .5rem;
+    display: flex;
+    justify-content: space-between;
 }
