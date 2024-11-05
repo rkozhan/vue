@@ -21,12 +21,15 @@
             </div>
             <button class="btn primary" v-on:click="addNewNote">Add</button>
             <hr>
-            <ul class="list">
+            <ul class="list" v-if="notes.length">
                 <li class="list-item" v-for="(note, i) in notes">               
                     <div>{{ note }}</div>
                     <button class="btn danger" v-on:click="removeNote(i, $event)">Delete</button>
                 </li>
             </ul>
+            <div v-if="notes.length">You have some notes</div>
+            <div v-else-if="notes.length > 5">You have more then 5 notes</div>
+            <div v-else>You have any note</div>
         </div>
     </div>
 
