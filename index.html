@@ -11,7 +11,6 @@
         <div class="card center">
             <h1>{{ title }}</h1>
             <div class="form-control">
-                <!-- directive to bind event handler -->
                 <input
                 type="text"
                     v-bind:placeholder="myPlaceholder"
@@ -19,11 +18,11 @@
                     v-on:input="inputChange1Handler"
                 >
             </div>
-            <button class="btn primary">Add</button>
+            <button class="btn primary" v-on:click="addNewNote">Add</button>
             <hr>
             <ul class="list">
-                <li class="list-item" v-for="myNote of notes">
-                    {{ myNote }}
+                <li class="list-item" v-for="note in notes">               
+                    {{ note }}
                 </li>
             </ul>
         </div>

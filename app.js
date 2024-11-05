@@ -11,6 +11,10 @@ const App = {
         //custom name
         inputChange1Handler(event) {
             this.inputValue = event.target.value            
+        },
+        addNewNote() {
+            this.notes.push(this.inputValue)
+            this.inputValue = ''
         }
     }
 }
