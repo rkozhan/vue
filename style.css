@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100dvh;
+    background: dimgrey;
+}
+
+.container {
+    min-height: 100%;
+    width: min(100%, 500px);
+    display: flex;
+}
+
+.center {
+    margin: auto;
+}
+
+.card {
+    padding: 3rem;
+    border-radius: 1rem;
+    background: whitesmoke;
+
+}
+
+.btn-wrapper {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 3rem;
+    height: 3rem;
+    color: whitesmoke;
+    border-radius: 1.5rem;
+    padding-inline: 2rem;
+    display: inline-block;
+}
+
+.primary {
+    background: forestgreen;
+}
+
+.danger {
+    background: firebrick;
+}
