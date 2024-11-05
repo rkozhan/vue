@@ -1,8 +1,8 @@
 const App = {
     data() {
         return {
-            counter: 0, //initial value
-            title: 'Counter'
+            title: 'My notes',
+            myPlaceholder: 'add your note'
         }
     }
 }

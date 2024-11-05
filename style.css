@@ -7,7 +7,7 @@ body {
 
 .container {
     min-height: 100%;
-    width: min(100%, 500px);
+    width: min(100%, 768px);
     display: flex;
 }
 
@@ -16,6 +16,7 @@ body {
 }
 
 .card {
+    width: 100%;
     padding: 3rem;
     border-radius: 1rem;
     background: whitesmoke;
@@ -29,11 +30,11 @@ body {
 }
 
 .btn {
-    font-size: 1.5rem;
     font-weight: bold;
-    line-height: 3rem;
-    height: 3rem;
+    line-height: 2rem;
+    height: 2rem;
     color: whitesmoke;
+    border: none;
     border-radius: 1.5rem;
     padding-inline: 2rem;
     cursor: pointer;
@@ -45,4 +46,8 @@ body {
 
 .danger {
     background: firebrick;
+}
+
+.form-control {
+    margin-bottom: 1rem;
 }
