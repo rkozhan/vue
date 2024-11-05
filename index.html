@@ -23,6 +23,9 @@
                     @click="items.splice(i, 1)"
                 >
                     {{ value }}
+                    &nbsp
+                    <input type="text" @click.stop>
+                    <!-- @click.stop @click.prevent => stopPropagation, preventDefault -->
                 </li>
            </ul>
 
