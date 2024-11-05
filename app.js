@@ -8,7 +8,6 @@ const App = {
         }
     }, 
     methods: {
-        //custom name
         inputChange1Handler(event) {
             this.inputValue = event.target.value            
         },
