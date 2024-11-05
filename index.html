@@ -10,16 +10,13 @@
     <div class="container" id="app">
         <div class="card center">
             <h1>{{ title }}: {{ calcAllNotesComputed }}</h1>
-            <!-- Optimize performance -->
-            <h2>2nd call: {{ calcAllNotesComputed }}</h2>
             <div class="form-control">
-                <!-- Labels:  v-bind: => : // v-on:  => @ -->
                 <input
                 type="text"
                     :placeholder="myPlaceholder"
-                    v-bind:value="inputValue"
-                    @input="inputChange1Handler"
-                    v-on:keypress.enter="addNewNote"
+                    :value="inputValue"
+                    @input="inputChangeHandler"
+                    @keypress.enter="addNewNote"
                 >
             </div>
             <button class="btn primary" v-on:click="addNewNote">Add</button>

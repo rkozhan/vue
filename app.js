@@ -8,13 +8,14 @@ const App = {
         }
     }, 
     methods: {
-        inputChange1Handler(event) {
+        inputChangeHandler(event) {
             this.inputValue = event.target.value            
         },
         addNewNote() {
             if (this.inputValue) {
                 this.notes.push(this.inputValue)
                 this.inputValue = ''
+                
             }
         },
         toUpperCase(str) {
@@ -22,16 +23,19 @@ const App = {
         },
         removeNote(i) {
             this.notes.splice(i, 1)
-        },
-        calcAllNotes() {
-            console.log('calcAllNotes') //callable at every symbol entered in input, to avoid use computed
-            return this.notes.length
         }
     },
     computed: {
         calcAllNotesComputed() {
-            console.log('calcAllNotesComputed') ////callable at changing of used variable
             return this.notes.length
+        }
+    },
+    watch: { 
+        //watch var changing: someVarName -> in watch someVarName(var)
+        inputValue(value) { 
+            if (value.length > 10) this.inputValue = ''  //some validation
+            console.log('input value changed', value);
+            
         }
     }
 }
