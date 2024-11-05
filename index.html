@@ -5,26 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="container" id="app">
+    <!-- directive v-cloak to avoid changes before app is ready -->
+    <div class="container" id="app" v-cloak>
         <div class="card center">
-
-            <!-- <div>{{ myHtml }}</div> -->
-            <!-- directive v-html -->
-            <div v-html="myHtml"></div>
-
-
-           <!-- <h2>{{ title }}</h2> -->
-           <!-- directive v-text -->
-           <h2 v-text="title"></h2>
-           
-
-           <!-- directive v-once -->
+           <h1 v-text="title"></h1>
            <h2 v-once>{{ title }}</h2>
-           
-           <!-- directive v-pre -->
-           <h2 v-pre>{{ title }}</h2>
 
            <button class="btn primary" @click="title = 'new text'">change title</button>
         </div>
