@@ -3,7 +3,8 @@ const App = {
         return {
             title: 'My notes',
             myPlaceholder: 'add your note',
-            inputValue: ''
+            inputValue: '',
+            notes: ['note 1', 'note 2', 'note 3']
         }
     }, 
     methods: {

@@ -19,9 +19,13 @@
                     v-on:input="inputChange1Handler"
                 >
             </div>
-            <h2>inputValue: {{ inputValue }}</h2>
             <button class="btn primary">Add</button>
             <hr>
+            <ul class="list">
+                <li class="list-item" v-for="myNote of notes">
+                    {{ myNote }}
+                </li>
+            </ul>
         </div>
     </div>
 
