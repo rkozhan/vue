@@ -14,11 +14,15 @@
 <body>
     <div class="container" id="app" v-cloak>
         <div class="card center">
-           <h1 v-text="title"></h1>
+           <h1 v-text="title + ': ' + items.length"></h1>
 
            <ul class="list">
-            <li class="list-item" v-for="(value, key) in person">
-                {{key}}: {{ value }}
+            <li
+                class="list-item"
+                v-for="(value, i) in items"
+                @click="items.splice(i, 1)"
+            >
+                {{ value }}
             </li>
            </ul>
         </div>
