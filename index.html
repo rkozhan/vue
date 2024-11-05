@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-    <!-- directive v-cloak to avoid changes before app is ready -->
     <div class="container" id="app" v-cloak>
         <div class="card center">
            <h1 v-text="title"></h1>
-           <h2 v-once>{{ title }}</h2>
 
-           <button class="btn primary" @click="title = 'new text'">change title</button>
+           <ul class="list">
+            <li class="list-item" v-for="item in 5">{{ item }}</li>
+           </ul>
         </div>
     </div>
 
