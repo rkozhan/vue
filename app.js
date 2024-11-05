@@ -22,6 +22,16 @@ const App = {
         },
         removeNote(i) {
             this.notes.splice(i, 1)
+        },
+        calcAllNotes() {
+            console.log('calcAllNotes') //callable at every symbol entered in input, to avoid use computed
+            return this.notes.length
+        }
+    },
+    computed: {
+        calcAllNotesComputed() {
+            console.log('calcAllNotesComputed') ////callable at changing of used variable
+            return this.notes.length
         }
     }
 }

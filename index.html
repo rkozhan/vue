@@ -9,7 +9,9 @@
 <body>
     <div class="container" id="app">
         <div class="card center">
-            <h1>{{ title }}: {{notes.length}}</h1>
+            <h1>{{ title }}: {{ calcAllNotesComputed }}</h1>
+            <!-- Optimize performance -->
+            <h2>2nd call: {{ calcAllNotesComputed }}</h2>
             <div class="form-control">
                 <!-- Labels:  v-bind: => : // v-on:  => @ -->
                 <input
