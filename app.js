@@ -8,10 +8,19 @@ Vue.createApp({
             age: 27
         },
         items: [1, 2, 3, 4, 5, 6]
-        }),
+    }),
+    methods: {
+        addItem(e) {
+            this.items.unshift(this.$refs.myInput.value)
+            this.$refs.myInput.value = ''  
+            //console.log(e.key);
+                      
+        }
+    },
     computed: {
         evenItems() {
-            return this.items.filter(i => i % 2 === 0) 
+            return this.items 
+            //return this.items.filter(i => i % 2 === 0) 
         }
     }
 }).mount('#app')
