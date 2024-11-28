@@ -40,7 +40,9 @@ export default {
 
       // tell parent that some event happened
       if (this.isNewsOpen) {
-        this.$emit('open-news')
+        // this.$emit('open-news')
+        // additional params to parent el
+        this.$emit('open-news', 'param2', 123)
       }
     }
   }
