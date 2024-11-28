@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-mutating-props -->
 <template>
     <div class="card">
       <h3>{{ title }}</h3>
@@ -8,14 +9,16 @@
 
 <script>
 export default {
-  // PROPS: vue get from props arr to merge with data()
-  props: [
-    'title'
-  ],
+  // props: ['title'],
+  // Validate Props
+  props: {
+    title: String,
+    id: Number,
+    isOpen: Boolean
+  },
   data () {
     return {
-      item: 'Item string',
-      isOpen: false
+      // isOpen: false
     }
   }
 }

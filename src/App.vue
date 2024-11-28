@@ -6,8 +6,10 @@
 
     <app-news
       v-for="item in news"
-      :key="item"
-      :title="item"
+      :key="item.id"
+      :title="item.title"
+      :id="item.id"
+      :is-open="item.isOpen"
     ></app-news>
   </div>
 </template>
@@ -20,23 +22,26 @@ export default {
     return {
       now: new Date().toLocaleDateString(),
       news: [
-        'Bitphone 32 is presented today',
-        'Icoin reaches 100B$',
-        'Cesna model S is available now'
+        {
+          title: 'Bitphone 32 is presented today',
+          id: 1,
+          isOpen: false
+        },
+        {
+          title: 'Icoin reaches 100B$',
+          id: 2,
+          isOpen: false
+        },
+        {
+          title: 'Cesna model S is available now',
+          id: 3,
+          isOpen: false
+        },
+        5
       ]
     }
   },
-  // register component locally
   components: {
-    // 'app-news': AppNews
-
-    // also in CebabCase => <app-news></app-news>
-    // 'AppNews': AppNews
-
-    // or
-    // AppNews: AppNews
-
-    // or
     AppNews
   }
 }
