@@ -4,8 +4,11 @@
       <h2>Today News {{ now }}</h2>
     </div>
 
-    <app-news></app-news>
-    <AppNews></AppNews>
+    <app-news
+      v-for="item in news"
+      :key="item"
+      :title="item"
+    ></app-news>
   </div>
 </template>
 
@@ -16,7 +19,6 @@ export default {
   data () {
     return {
       now: new Date().toLocaleDateString(),
-      isOpen: false,
       news: [
         'Bitphone 32 is presented today',
         'Icoin reaches 100B$',
