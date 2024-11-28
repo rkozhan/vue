@@ -2,8 +2,8 @@
 <template>
     <div class="card">
       <h3>{{ title }}</h3>
-      <button class="btn" @click="isOpen = !isOpen">Open</button>
-      <p v-if="isOpen">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus atque ipsa accusamus et eius sapiente?</p>
+      <button class="btn" @click="open">{{ isNewsOpen ? 'close' : 'open'}}</button>
+      <p v-if="isNewsOpen">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus atque ipsa accusamus et eius sapiente?</p>
     </div>
 </template>
 
@@ -12,13 +12,36 @@ export default {
   // props: ['title'],
   // Validate Props
   props: {
-    title: String,
-    id: Number,
-    isOpen: Boolean
+    title: {
+      type: String,
+      required: true
+    },
+    id: {
+      type: Number,
+      required: true
+    },
+    isOpen: {
+      type: Boolean,
+      required: false,
+      default: false,
+      validator (value) {
+        return value === true || value === false
+      }
+    }
   },
   data () {
     return {
-      // isOpen: false
+      isNewsOpen: this.isOpen
+    }
+  },
+  methods: {
+    open () {
+      this.isNewsOpen = !this.isNewsOpen
+
+      // tell parent that some event happened
+      if (this.isNewsOpen) {
+        this.$emit('open-news')
+      }
     }
   }
 }

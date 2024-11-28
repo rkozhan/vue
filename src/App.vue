@@ -2,6 +2,7 @@
   <div class="container pt-1">
     <div class="card">
       <h2>Today News {{ now }}</h2>
+      <span>Opened: {{ openRate }}</span>
     </div>
 
     <app-news
@@ -10,6 +11,7 @@
       :title="item.title"
       :id="item.id"
       :is-open="item.isOpen"
+      v-on:open-news="openRate++"
     ></app-news>
   </div>
 </template>
@@ -21,6 +23,7 @@ export default {
   data () {
     return {
       now: new Date().toLocaleDateString(),
+      openRate: 0,
       news: [
         {
           title: 'Bitphone 32 is presented today',
@@ -36,8 +39,7 @@ export default {
           title: 'Cesna model S is available now',
           id: 3,
           isOpen: false
-        },
-        5
+        }
       ]
     }
   },
