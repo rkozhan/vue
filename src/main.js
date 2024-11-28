@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import './theme.css'
 
 import MainHeader from './MainHeader.vue'
 
