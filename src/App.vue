@@ -11,7 +11,7 @@
       :title="item.title"
       :id="item.id"
       :is-open="item.isOpen"
-      v-on:open-news="openNews"
+      @open-news="openNews"
     ></app-news>
   </div>
 </template>
@@ -44,10 +44,8 @@ export default {
     }
   },
   methods: {
-    openNews (data, data2) {
+    openNews () {
       this.openRate++
-      console.log(data)
-      console.log(data2)
     }
   },
   components: {

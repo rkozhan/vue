@@ -10,6 +10,18 @@
 <script>
 export default {
   // props: ['title'],
+  // emits: ['open-news'], // to point custom outgoing events
+  // Validate Emits
+  emits: {
+    // 'open-news': null // no validation
+    'open-news' (num) {
+      if (num) {
+        return true
+      }
+      console.warn('No data in open-news emit')
+      return false
+    }
+  },
   // Validate Props
   props: {
     title: {
@@ -42,7 +54,8 @@ export default {
       if (this.isNewsOpen) {
         // this.$emit('open-news')
         // additional params to parent el
-        this.$emit('open-news', 'param2', 123)
+        this.$emit('open-news', 42) // valid
+        // this.$emit('open-news') // invalid, num parameter is required
       }
     }
   }
