@@ -3,14 +3,14 @@
     <div class="card">
       <h3>{{ title }}</h3>
       <!-- <button class="btn" @click="open">{{ isNewsOpen ? 'close' : 'open'}}</button> -->
-      <app-button @action="open" :text="isNewsOpen ? 'close' : 'open'"></app-button>
+      <app-button @action="open">{{ isNewsOpen ? 'close' : 'open' }}</app-button>
       <!-- <button class="btn danger" v-if="wasRead" @click="$emit('unmark', id)">Mark as unread</button> -->
-      <app-button color="danger" text="Mark as unread" v-if="wasRead" @action="$emit('unmark', id)"></app-button>
+      <app-button color="danger" v-if="wasRead" @action="$emit('unmark', id)">Mark as unread</app-button>
       <div v-if="isNewsOpen">
         <hr/>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus atque ipsa accusamus et eius sapiente?</p>
         <!-- <button class="btn primary" @click="mark" v-if="!wasRead">Read news</button> -->
-        <app-button color="primary" text="Read news" @action="mark" v-if="!wasRead"></app-button>
+        <app-button color="primary" @action="mark" v-if="!wasRead">Read news</app-button>
       </div>
     </div>
 </template>

@@ -55,7 +55,6 @@ export default {
       this.openRate++
     },
     readNews (id) {
-      console.log(id)
       const idx = this.news.findIndex(news => news.id === id)
       this.news[idx].wasRead = true
       this.readRate++
