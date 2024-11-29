@@ -2,30 +2,26 @@
 <template>
     <div class="card">
       <h3>{{ title }}</h3>
-      <button class="btn" @click="open">{{ isNewsOpen ? 'close' : 'open'}}</button>
-      <button class="btn danger" v-if="wasRead" @click="unmark">Mark as unread</button>
+      <!-- <button class="btn" @click="open">{{ isNewsOpen ? 'close' : 'open'}}</button> -->
+      <app-button @action="open" :text="isNewsOpen ? 'close' : 'open'"></app-button>
+      <!-- <button class="btn danger" v-if="wasRead" @click="$emit('unmark', id)">Mark as unread</button> -->
+      <app-button color="danger" text="Mark as unread" v-if="wasRead" @action="$emit('unmark', id)"></app-button>
       <div v-if="isNewsOpen">
         <hr/>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus atque ipsa accusamus et eius sapiente?</p>
-        <button class="btn primary" @click="mark" v-if="!wasRead">Read news</button>
+        <!-- <button class="btn primary" @click="mark" v-if="!wasRead">Read news</button> -->
+        <app-button color="primary" text="Read news" @action="mark" v-if="!wasRead"></app-button>
       </div>
     </div>
 </template>
 
 <script>
+import AppButton from './AppButton'
+
 export default {
-  // props: ['title'],
-  // emits: ['open-news'], // to point custom outgoing events
-  // Validate Emits
   emits: {
     'open-news': null,
-    'read-news' (id) {
-      if (id) {
-        return true
-      }
-      console.warn('No id parameter for emit read-news')
-      return false
-    },
+    'read-news': null,
     unmark: null
   },
   // Validate Props
@@ -56,22 +52,15 @@ export default {
   methods: {
     open () {
       this.isNewsOpen = !this.isNewsOpen
-
-      // tell parent that some event happened
       if (this.isNewsOpen) {
-        // this.$emit('open-news')
-        // additional params to parent el
-        this.$emit('open-news', 42) // valid
-        // this.$emit('open-news') // invalid, num parameter is required
+        this.$emit('open-news')
       }
     },
     mark () {
       this.isNewsOpen = false
       this.$emit('read-news', this.id)
-    },
-    unmark () {
-      this.$emit('unmark', this.id)
     }
-  }
+  },
+  components: { AppButton }
 }
 </script>
